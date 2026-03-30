@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Vivirion Mental Health Support — find tailored mental health professionals, take a guided check-in, and access trusted resources. Confidential, evidence-informed, and matched to you." />
+  <title>Vi Well - Taking Your Mental Snapshot | Vivirion Solutions Inc. </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="mental-health.css" />
+</head>
+
+<body>
+
+  <!-- ============================================================
+       PERSISTENT CRISIS WIDGET
+  ============================================================ -->
+  <div id="crisis-widget" class="crisis-widget" role="complementary" aria-label="Crisis support resources">
+    <button id="crisis-toggle" class="crisis-toggle" aria-expanded="false" aria-controls="crisis-panel">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"
+          fill="currentColor" />
+      </svg>
+      <span>Crisis Help</span>
+    </button>
+    <div id="crisis-panel" class="crisis-panel" role="region" aria-label="Crisis resources" hidden>
+      <p class="crisis-panel__intro">If you are in immediate danger, please reach out now:</p>
+      <ul class="crisis-panel__list">
+        <li>
+          <strong>988 Suicide &amp; Crisis Lifeline</strong>
+          <span>Call or text <a href="tel:988" aria-label="Call 988 Suicide and Crisis Lifeline">988</a> (US)</span>
+        </li>
+        <li>
+          <strong>Crisis Text Line</strong>
+          <span>Text <strong>HOME</strong> to <a href="sms:741741"
+              aria-label="Text HOME to Crisis Text Line at 741741">741741</a></span>
+        </li>
+        <li>
+          <strong>Emergency Services</strong>
+          <span>Call <a href="tel:911" aria-label="Call 911">911</a>, <a href="tel:999">999</a>, or <a
+              href="tel:112">112</a></span>
+        </li>
+        <li>
+          <strong>International Resources</strong>
+          <span><a href="https://www.findahelpline.com" target="_blank"
+              rel="noopener noreferrer">findahelpline.com</a></span>
+        </li>
+      </ul>
+      <p class="crisis-panel__note">You don't need to share your name. Support is available 24/7.</p>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       NAVIGATION BAR
+  ============================================================ -->
+  <header class="site-header" role="banner">
+    <nav class="nav-container" aria-label="Main navigation">
+      <a href="https://vivirion.com" class="nav-logo" aria-label="Vivirion home">
+        <svg width="175" height="93" viewBox="0 0 225 93" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M81.1264 27.5455L88.6832 48.973H88.9815L96.5384 27.5455H99.7699L90.4233 53H87.2415L77.8949 27.5455H81.1264ZM103.337 53V33.9091H106.27V53H103.337ZM104.828 30.7273C104.257 30.7273 103.764 30.5326 103.349 30.1431C102.943 29.7537 102.74 29.2855 102.74 28.7386C102.74 28.1918 102.943 27.7236 103.349 27.3342C103.764 26.9447 104.257 26.75 104.828 26.75C105.4 26.75 105.889 26.9447 106.295 27.3342C106.709 27.7236 106.917 28.1918 106.917 28.7386C106.917 29.2855 106.709 29.7537 106.295 30.1431C105.889 30.5326 105.4 30.7273 104.828 30.7273ZM132.424 38.9055V41.6399H121.288V38.9055H132.424ZM152.45 53L145.49 27.5455H148.622L153.942 48.277H154.19L159.609 27.5455H163.089L168.508 48.277H168.757L174.077 27.5455H177.209L170.248 53H167.067L161.449 32.7159H161.25L155.632 53H152.45ZM186.878 53.3977C185.039 53.3977 183.452 52.9917 182.118 52.1797C180.792 51.3594 179.769 50.2159 179.048 48.7493C178.336 47.2744 177.979 45.5592 177.979 43.6037C177.979 41.6482 178.336 39.9247 179.048 38.4332C179.769 36.9335 180.772 35.7652 182.056 34.9283C183.349 34.0831 184.857 33.6605 186.58 33.6605C187.574 33.6605 188.556 33.8262 189.526 34.1577C190.495 34.4891 191.378 35.0277 192.173 35.7734C192.969 36.5109 193.602 37.4886 194.075 38.7067C194.547 39.9247 194.783 41.4245 194.783 43.206V44.4489H180.067V41.9134H191.8C191.8 40.8362 191.585 39.875 191.154 39.0298C190.731 38.1847 190.126 37.5176 189.339 37.0288C188.56 36.5399 187.641 36.2955 186.58 36.2955C185.412 36.2955 184.401 36.5855 183.547 37.1655C182.702 37.7372 182.052 38.483 181.596 39.4027C181.14 40.3224 180.912 41.3085 180.912 42.3608V44.0511C180.912 45.4929 181.161 46.7151 181.658 47.7177C182.164 48.712 182.864 49.4702 183.759 49.9922C184.654 50.5059 185.693 50.7628 186.878 50.7628C187.649 50.7628 188.345 50.6551 188.966 50.4396C189.596 50.2159 190.139 49.8845 190.595 49.4453C191.05 48.9979 191.403 48.4427 191.651 47.7798L194.485 48.5753C194.187 49.5365 193.685 50.3816 192.981 51.1108C192.277 51.8317 191.407 52.3951 190.371 52.8011C189.335 53.1989 188.171 53.3977 186.878 53.3977ZM202.178 27.5455V53H199.245V27.5455H202.178ZM210.484 27.5455V53H207.551V27.5455H210.484Z" fill="#299B62"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M68.3852 49.0235C64.2122 18.5893 35.51 8.53998 7.38934 15.0048C15.0656 41.1756 38.8087 57.8299 68.3852 49.0235Z" fill="#A1E2AF"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M69.5698 54.5263C66.3546 77.975 44.2403 85.7178 22.5741 80.7368C28.4884 60.5729 46.7819 47.7412 69.5698 54.5263Z" fill="#A1E2AF"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M67.9713 49.2861C69.0201 11.4131 41.3446 -0.316543 14.0002 0.00645865C19.8209 31.3826 38.0644 54.4046 67.9713 49.2861Z" fill="#299B62"/>
+            <path d="M104.5 31C106.433 31 108 29.433 108 27.5C108 25.567 106.433 24 104.5 24C102.567 24 101 25.567 101 27.5C101 29.433 102.567 31 104.5 31Z" fill="#FFD200"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M68.9781 54.5568C69.7743 84.0978 48.7615 93.2469 28 92.995C32.4194 68.5215 46.271 50.5644 68.9781 54.5568Z" fill="#299B62"/>
+            <path d="M86.408 61.696V70H85.316V63.808L82.556 70H81.788L79.016 63.796V70H77.924V61.696H79.1L82.172 68.56L85.244 61.696H86.408ZM94.2599 66.46C94.2599 66.668 94.2479 66.888 94.2239 67.12H88.9679C89.0079 67.768 89.2279 68.276 89.6279 68.644C90.0359 69.004 90.5279 69.184 91.1039 69.184C91.5759 69.184 91.9679 69.076 92.2799 68.86C92.5999 68.636 92.8239 68.34 92.9519 67.972H94.1279C93.9519 68.604 93.5999 69.12 93.0719 69.52C92.5439 69.912 91.8879 70.108 91.1039 70.108C90.4799 70.108 89.9199 69.968 89.4239 69.688C88.9359 69.408 88.5519 69.012 88.2719 68.5C87.9919 67.98 87.8519 67.38 87.8519 66.7C87.8519 66.02 87.9879 65.424 88.2599 64.912C88.5319 64.4 88.9119 64.008 89.3999 63.736C89.8959 63.456 90.4639 63.316 91.1039 63.316C91.7279 63.316 92.2799 63.452 92.7599 63.724C93.2399 63.996 93.6079 64.372 93.8639 64.852C94.1279 65.324 94.2599 65.86 94.2599 66.46ZM93.1319 66.232C93.1319 65.816 93.0399 65.46 92.8559 65.164C92.6719 64.86 92.4199 64.632 92.0999 64.48C91.7879 64.32 91.4399 64.24 91.0559 64.24C90.5039 64.24 90.0319 64.416 89.6399 64.768C89.2559 65.12 89.0359 65.608 88.9799 66.232H93.1319ZM98.9053 63.304C99.7053 63.304 100.353 63.548 100.849 64.036C101.345 64.516 101.593 65.212 101.593 66.124V70H100.513V66.28C100.513 65.624 100.349 65.124 100.021 64.78C99.6933 64.428 99.2453 64.252 98.6773 64.252C98.1013 64.252 97.6413 64.432 97.2973 64.792C96.9613 65.152 96.7933 65.676 96.7933 66.364V70H95.7013V63.424H96.7933V64.36C97.0093 64.024 97.3013 63.764 97.6693 63.58C98.0453 63.396 98.4573 63.304 98.9053 63.304ZM104.709 64.324V68.2C104.709 68.52 104.777 68.748 104.913 68.884C105.049 69.012 105.285 69.076 105.621 69.076H106.425V70H105.441C104.833 70 104.377 69.86 104.073 69.58C103.769 69.3 103.617 68.84 103.617 68.2V64.324H102.765V63.424H103.617V61.768H104.709V63.424H106.425V64.324H104.709ZM107.34 66.688C107.34 66.016 107.476 65.428 107.748 64.924C108.02 64.412 108.392 64.016 108.864 63.736C109.344 63.456 109.876 63.316 110.46 63.316C111.036 63.316 111.536 63.44 111.96 63.688C112.384 63.936 112.7 64.248 112.908 64.624V63.424H114.012V70H112.908V68.776C112.692 69.16 112.368 69.48 111.936 69.736C111.512 69.984 111.016 70.108 110.448 70.108C109.864 70.108 109.336 69.964 108.864 69.676C108.392 69.388 108.02 68.984 107.748 68.464C107.476 67.944 107.34 67.352 107.34 66.688ZM112.908 66.7C112.908 66.204 112.808 65.772 112.608 65.404C112.408 65.036 112.136 64.756 111.792 64.564C111.456 64.364 111.084 64.264 110.676 64.264C110.268 64.264 109.896 64.36 109.56 64.552C109.224 64.744 108.956 65.024 108.756 65.392C108.556 65.76 108.456 66.192 108.456 66.688C108.456 67.192 108.556 67.632 108.756 68.008C108.956 68.376 109.224 68.66 109.56 68.86C109.896 69.052 110.268 69.148 110.676 69.148C111.084 69.148 111.456 69.052 111.792 68.86C112.136 68.66 112.408 68.376 112.608 68.008C112.808 67.632 112.908 67.196 112.908 66.7ZM116.95 61.12V70H115.858V61.12H116.95ZM128.454 61.636V70H127.362V66.208H123.102V70H122.01V61.636H123.102V65.308H127.362V61.636H128.454ZM136.319 66.46C136.319 66.668 136.307 66.888 136.283 67.12H131.027C131.067 67.768 131.287 68.276 131.687 68.644C132.095 69.004 132.587 69.184 133.163 69.184C133.635 69.184 134.027 69.076 134.339 68.86C134.659 68.636 134.883 68.34 135.011 67.972H136.187C136.011 68.604 135.659 69.12 135.131 69.52C134.603 69.912 133.947 70.108 133.163 70.108C132.539 70.108 131.979 69.968 131.483 69.688C130.995 69.408 130.611 69.012 130.331 68.5C130.051 67.98 129.911 67.38 129.911 66.7C129.911 66.02 130.047 65.424 130.319 64.912C130.591 64.4 130.971 64.008 131.459 63.736C131.955 63.456 132.523 63.316 133.163 63.316C133.787 63.316 134.339 63.452 134.819 63.724C135.299 63.996 135.667 64.372 135.923 64.852C136.187 65.324 136.319 65.86 136.319 66.46ZM135.191 66.232C135.191 65.816 135.099 65.46 134.915 65.164C134.731 64.86 134.479 64.632 134.159 64.48C133.847 64.32 133.499 64.24 133.115 64.24C132.563 64.24 132.091 64.416 131.699 64.768C131.315 65.12 131.095 65.608 131.039 66.232H135.191ZM137.352 66.688C137.352 66.016 137.488 65.428 137.76 64.924C138.032 64.412 138.404 64.016 138.876 63.736C139.356 63.456 139.888 63.316 140.472 63.316C141.048 63.316 141.548 63.44 141.972 63.688C142.396 63.936 142.712 64.248 142.92 64.624V63.424H144.024V70H142.92V68.776C142.704 69.16 142.38 69.48 141.948 69.736C141.524 69.984 141.028 70.108 140.46 70.108C139.876 70.108 139.348 69.964 138.876 69.676C138.404 69.388 138.032 68.984 137.76 68.464C137.488 67.944 137.352 67.352 137.352 66.688ZM142.92 66.7C142.92 66.204 142.82 65.772 142.62 65.404C142.42 65.036 142.148 64.756 141.804 64.564C141.468 64.364 141.096 64.264 140.688 64.264C140.28 64.264 139.908 64.36 139.572 64.552C139.236 64.744 138.968 65.024 138.768 65.392C138.568 65.76 138.468 66.192 138.468 66.688C138.468 67.192 138.568 67.632 138.768 68.008C138.968 68.376 139.236 68.66 139.572 68.86C139.908 69.052 140.28 69.148 140.688 69.148C141.096 69.148 141.468 69.052 141.804 68.86C142.148 68.66 142.42 68.376 142.62 68.008C142.82 67.632 142.92 67.196 142.92 66.7ZM146.961 61.12V70H145.869V61.12H146.961ZM150.154 64.324V68.2C150.154 68.52 150.222 68.748 150.358 68.884C150.494 69.012 150.73 69.076 151.066 69.076H151.87V70H150.886C150.278 70 149.822 69.86 149.518 69.58C149.214 69.3 149.062 68.84 149.062 68.2V64.324H148.21V63.424H149.062V61.768H150.154V63.424H151.87V64.324H150.154ZM156.458 63.304C156.954 63.304 157.402 63.412 157.802 63.628C158.202 63.836 158.514 64.152 158.738 64.576C158.97 65 159.086 65.516 159.086 66.124V70H158.006V66.28C158.006 65.624 157.842 65.124 157.514 64.78C157.186 64.428 156.738 64.252 156.17 64.252C155.594 64.252 155.134 64.432 154.79 64.792C154.454 65.152 154.286 65.676 154.286 66.364V70H153.194V61.12H154.286V64.36C154.502 64.024 154.798 63.764 155.174 63.58C155.558 63.396 155.986 63.304 156.458 63.304ZM172.553 61.696V70H171.461V63.808L168.701 70H167.933L165.161 63.796V70H164.069V61.696H165.245L168.317 68.56L171.389 61.696H172.553ZM173.996 66.688C173.996 66.016 174.132 65.428 174.404 64.924C174.676 64.412 175.048 64.016 175.52 63.736C176 63.456 176.532 63.316 177.116 63.316C177.692 63.316 178.192 63.44 178.616 63.688C179.04 63.936 179.356 64.248 179.564 64.624V63.424H180.668V70H179.564V68.776C179.348 69.16 179.024 69.48 178.592 69.736C178.168 69.984 177.672 70.108 177.104 70.108C176.52 70.108 175.992 69.964 175.52 69.676C175.048 69.388 174.676 68.984 174.404 68.464C174.132 67.944 173.996 67.352 173.996 66.688ZM179.564 66.7C179.564 66.204 179.464 65.772 179.264 65.404C179.064 65.036 178.792 64.756 178.448 64.564C178.112 64.364 177.74 64.264 177.332 64.264C176.924 64.264 176.552 64.36 176.216 64.552C175.88 64.744 175.612 65.024 175.412 65.392C175.212 65.76 175.112 66.192 175.112 66.688C175.112 67.192 175.212 67.632 175.412 68.008C175.612 68.376 175.88 68.66 176.216 68.86C176.552 69.052 176.924 69.148 177.332 69.148C177.74 69.148 178.112 69.052 178.448 68.86C178.792 68.66 179.064 68.376 179.264 68.008C179.464 67.632 179.564 67.196 179.564 66.7ZM183.846 64.324V68.2C183.846 68.52 183.914 68.748 184.05 68.884C184.186 69.012 184.422 69.076 184.758 69.076H185.562V70H184.578C183.97 70 183.514 69.86 183.21 69.58C182.906 69.3 182.754 68.84 182.754 68.2V64.324H181.902V63.424H182.754V61.768H183.846V63.424H185.562V64.324H183.846ZM188.217 64.324V68.2C188.217 68.52 188.285 68.748 188.421 68.884C188.557 69.012 188.793 69.076 189.129 69.076H189.933V70H188.949C188.341 70 187.885 69.86 187.581 69.58C187.277 69.3 187.125 68.84 187.125 68.2V64.324H186.273V63.424H187.125V61.768H188.217V63.424H189.933V64.324H188.217ZM197.256 66.46C197.256 66.668 197.244 66.888 197.22 67.12H191.964C192.004 67.768 192.224 68.276 192.624 68.644C193.032 69.004 193.524 69.184 194.1 69.184C194.572 69.184 194.964 69.076 195.276 68.86C195.596 68.636 195.82 68.34 195.948 67.972H197.124C196.948 68.604 196.596 69.12 196.068 69.52C195.54 69.912 194.884 70.108 194.1 70.108C193.476 70.108 192.916 69.968 192.42 69.688C191.932 69.408 191.548 69.012 191.268 68.5C190.988 67.98 190.848 67.38 190.848 66.7C190.848 66.02 190.984 65.424 191.256 64.912C191.528 64.4 191.908 64.008 192.396 63.736C192.892 63.456 193.46 63.316 194.1 63.316C194.724 63.316 195.276 63.452 195.756 63.724C196.236 63.996 196.604 64.372 196.86 64.852C197.124 65.324 197.256 65.86 197.256 66.46ZM196.128 66.232C196.128 65.816 196.036 65.46 195.852 65.164C195.668 64.86 195.416 64.632 195.096 64.48C194.784 64.32 194.436 64.24 194.052 64.24C193.5 64.24 193.028 64.416 192.636 64.768C192.252 65.12 192.032 65.608 191.976 66.232H196.128ZM199.789 64.492C199.981 64.116 200.253 63.824 200.605 63.616C200.965 63.408 201.401 63.304 201.913 63.304V64.432H201.625C200.401 64.432 199.789 65.096 199.789 66.424V70H198.697V63.424H199.789V64.492ZM205.502 70.108C204.998 70.108 204.546 70.024 204.146 69.856C203.746 69.68 203.43 69.44 203.198 69.136C202.966 68.824 202.838 68.468 202.814 68.068H203.942C203.974 68.396 204.126 68.664 204.398 68.872C204.678 69.08 205.042 69.184 205.49 69.184C205.906 69.184 206.234 69.092 206.474 68.908C206.714 68.724 206.834 68.492 206.834 68.212C206.834 67.924 206.706 67.712 206.45 67.576C206.194 67.432 205.798 67.292 205.262 67.156C204.774 67.028 204.374 66.9 204.062 66.772C203.758 66.636 203.494 66.44 203.27 66.184C203.054 65.92 202.946 65.576 202.946 65.152C202.946 64.816 203.046 64.508 203.246 64.228C203.446 63.948 203.73 63.728 204.098 63.568C204.466 63.4 204.886 63.316 205.358 63.316C206.086 63.316 206.674 63.5 207.122 63.868C207.57 64.236 207.81 64.74 207.842 65.38H206.75C206.726 65.036 206.586 64.76 206.33 64.552C206.082 64.344 205.746 64.24 205.322 64.24C204.93 64.24 204.618 64.324 204.386 64.492C204.154 64.66 204.038 64.88 204.038 65.152C204.038 65.368 204.106 65.548 204.242 65.692C204.386 65.828 204.562 65.94 204.77 66.028C204.986 66.108 205.282 66.2 205.658 66.304C206.13 66.432 206.514 66.56 206.81 66.688C207.106 66.808 207.358 66.992 207.566 67.24C207.782 67.488 207.894 67.812 207.902 68.212C207.902 68.572 207.802 68.896 207.602 69.184C207.402 69.472 207.118 69.7 206.75 69.868C206.39 70.028 205.974 70.108 205.502 70.108ZM209.792 70.072C209.584 70.072 209.408 70 209.264 69.856C209.12 69.712 209.048 69.536 209.048 69.328C209.048 69.12 209.12 68.944 209.264 68.8C209.408 68.656 209.584 68.584 209.792 68.584C209.992 68.584 210.16 68.656 210.296 68.8C210.44 68.944 210.512 69.12 210.512 69.328C210.512 69.536 210.44 69.712 210.296 69.856C210.16 70 209.992 70.072 209.792 70.072Z" fill="#299B62"/>
+        </svg>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="https://vivirion.com/">Home</a></li>
+        <li><a href="https://vivirion.com/vi-learn">Vi Learn</a></li>
+        <li><a href="https://vivirion.com/vi-connect">Vi Connect</a></li>
+        <li><a href="https://vivirion.com/vi-nav">Vi Nav</a></li>
+        <li><a href="mental-landing.html"> Vi Well</a></li>
+        <li><a href="mental-snapshot.html" aria-current="page" class="nav-links__active">Vi Check</a></li>
+        <li><a href="find-pros.html">Vi Help</a></li>
+        <li><a href="https://vivirion.com/contact">Contact Us</a></li>
+        <li><a href="https://vivirion.com/login" class="btn-nav-login">Log In</a></li>
+        <li><a href="https://vivirion.com/signup" class="btn-nav-signup" style="color: white">Sign Up</a></li>
+      </ul>
+      <button class="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <div id="mobile-nav" class="mobile-nav" hidden aria-label="Mobile navigation">
+      <ul role="list">
+        <li><a href="https://vivirion.com/">Home</a></li>
+        <li><a href="https://vivirion.com/vi-learn">Vi Learn</a></li>
+        <li><a href="https://vivirion.com/vi-connect">Vi Connect</a></li>
+        <li><a href="https://vivirion.com/vi-nav">Vi Nav</a></li>
+        <li><a href="mental-snapshot.html" aria-current="page">Vi Well</a></li>
+        <li><a href="find-pros.html">Vi Help</a></li>
+        <li><a href="https://vivirion.com/contact">Contact Us</a></li>
+        <li><a href="https://vivirion.com/login">Log In</a></li>
+        <li><a href="https://vivirion.com/signup" class="nav-links__active">Sign Up</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ============================================================
+         SECTION 1 — HERO
+    ============================================================ -->
+    <section id="hero" class="hero" aria-labelledby="hero-headline">
+      <div class="hero__content container">
+        <p class="hero__eyebrow fade-in-stagger" style="--delay: 0s">Vi Check — Mental Health Analysis</p>
+        <h1 id="hero-headline" class="hero__headline fade-in-stagger" style="--delay: 0.15s">
+          Take a Snapshot of<br /><span class="hero__headline--accent">Your Mental Health</span>
+        </h1>
+        <p class="hero__subheadline fade-in-stagger" style="--delay: 0.3s">
+          Vivirion connects you with the right mental health support — guided by how <em>you</em> feel, tailored to what
+          <em>you</em> need.
+        </p>
+        <div class="hero__ctas fade-in-stagger" style="--delay: 0.45s">
+          <a href="find-pros.html" class="btn btn--primary" id="hero-cta-assessment">
+            Find a Professional
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+        <div class="trust-strip fade-in-stagger" role="list" style="--delay: 0.6s" aria-label="Trust signals">
+          <div class="trust-strip__item" role="listitem">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            Confidential
+          </div>
+          <div class="trust-strip__divider" aria-hidden="true">·</div>
+          <div class="trust-strip__item" role="listitem">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path
+                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            Evidence-Informed
+          </div>
+          <div class="trust-strip__divider" aria-hidden="true">·</div>
+          <div class="trust-strip__item" role="listitem">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            Matched to You
+          </div>
+        </div>
+      </div>
+      <div class="hero__scroll-hint" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 2 — HOW IT WORKS
+    ============================================================ -->
+    <section id="how-it-works" class="how-it-works" aria-labelledby="how-headline">
+      <div class="container">
+        <h1 id="how-headline" class="section-eyebrow-title">
+          <span class="eyebrow">The Process</span>
+          How It Works
+        </h1>
+        <div class="steps" role="list">
+          <div class="step" role="listitem">
+            <div class="step__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="currentColor"
+                  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="step__number" aria-hidden="true">01</div>
+            <h3 class="step__title">Share What You're Experiencing</h3>
+            <p class="step__desc">Answer a few guided, gentle questions about how you've been feeling. No clinical forms
+              — just an honest conversation at your own pace.</p>
+          </div>
+          <div class="step__connector" aria-hidden="true"></div>
+          <div class="step" role="listitem">
+            <div class="step__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"
+                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="step__number" aria-hidden="true">02</div>
+            <h3 class="step__title">Get Your Personal Snapshot</h3>
+            <p class="step__desc">Receive an AI-generated summary of what you've shared — written warmly, reflecting
+              your experiences back to you with suggested next steps.</p>
+          </div>
+          <div class="step__connector" aria-hidden="true"></div>
+          <div class="step" role="listitem">
+            <div class="step__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"
+                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <div class="step__number" aria-hidden="true">03</div>
+            <h3 class="step__title">Connect With the Right Support</h3>
+            <p class="step__desc">Get matched with Vivirion-affiliated professionals who fit your needs, plus curated
+              external resources — all in one place, ready when you are.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 3 — AI ASSESSMENT MODULE
+    ============================================================ -->
+    <section id="assessment" class="assessment-section" aria-labelledby="assessment-headline">
+      <div class="container">
+        <div class="assessment-header">
+          <span class="eyebrow">Guided Check-In</span>
+          <h2 id="assessment-headline">How Are You Doing?</h2>
+          <p>This is a safe, private space to reflect on how you've been feeling. There are no wrong answers — take your
+            time.</p>
+          <ul class="assessment-meta" aria-label="Assessment information" role="list">
+            <li role="listitem"> About 3–5 minutes</li>
+            <li role="listitem"> Private by default</li>
+            <li role="listitem"> Not a medical diagnosis</li>
+          </ul>
+        </div>
+
+        <div class="assessment-card" id="assessment-card" role="region" aria-label="Mental health assessment">
+          <!-- Progress Bar -->
+          <div class="assessment-progress" role="progressbar" aria-valuemin="0" aria-valuemax="6" aria-valuenow="0"
+            aria-label="Assessment progress">
+            <div class="assessment-progress__bar" id="progress-bar"></div>
+            <span class="assessment-progress__label" id="progress-label" aria-live="polite">Step 1 of 6</span>
+          </div>
+
+          <!-- Assessment Screens Container -->
+          <div class="assessment-screens" id="assessment-screens">
+
+            <!-- Screen 1 — Emotional Check-In -->
+            <div class="assessment-screen active" data-screen="1" role="group" aria-labelledby="screen1-question">
+              <p class="assessment-screen__question" id="screen1-question">How have you been feeling lately, overall?
+              </p>
+              <p class="assessment-screen__subtext">Select all that apply — you can choose more than one.</p>
+              <div class="assessment-options assessment-options--multi" data-field="mood" role="group"
+                aria-labelledby="screen1-question">
+                <button class="option-btn" data-value="anxious" aria-pressed="false"> Anxious</button>
+                <button class="option-btn" data-value="low_depressed" aria-pressed="false"> Low or depressed</button>
+                <button class="option-btn" data-value="overwhelmed" aria-pressed="false"> Overwhelmed</button>
+                <button class="option-btn" data-value="disconnected" aria-pressed="false"> Disconnected</button>
+                <button class="option-btn" data-value="burnt_out" aria-pressed="false"> Burnt out</button>
+                <button class="option-btn" data-value="not_sure" aria-pressed="false"> Not sure</button>
+                <button class="option-btn" data-value="mixed" aria-pressed="false"> A mix of things</button>
+              </div>
+              <div class="assessment-nav">
+                <span></span>
+                <button class="btn btn--primary" id="next-1" data-next="2"
+                  aria-label="Continue to next question">Continue</button>
+              </div>
+            </div>
+
+            <!-- Screen 2 — Duration -->
+            <div class="assessment-screen" data-screen="2" role="group" aria-labelledby="screen2-question">
+              <p class="assessment-screen__question" id="screen2-question">How long have you been feeling this way?</p>
+              <p class="assessment-screen__subtext">Choose the option that feels closest.</p>
+              <div class="assessment-options assessment-options--single" data-field="duration" role="group"
+                aria-labelledby="screen2-question">
+                <button class="option-btn" data-value="few_days" aria-pressed="false">A few days</button>
+                <button class="option-btn" data-value="few_weeks" aria-pressed="false">A few weeks</button>
+                <button class="option-btn" data-value="few_months" aria-pressed="false">A few months</button>
+                <button class="option-btn" data-value="six_plus_months" aria-pressed="false">Longer than 6
+                  months</button>
+                <button class="option-btn" data-value="comes_and_goes" aria-pressed="false">It comes and goes</button>
+              </div>
+              <div class="assessment-nav">
+                <button class="btn btn--ghost" data-prev="1" aria-label="Go back to previous question">← Back</button>
+                <button class="btn btn--primary" data-next="3" aria-label="Continue to next question">Continue</button>
+              </div>
+            </div>
+
+            <!-- Screen 3 — Impact -->
+            <div class="assessment-screen" data-screen="3" role="group" aria-labelledby="screen3-question">
+              <p class="assessment-screen__question" id="screen3-question">Is this affecting your daily life?</p>
+              <p class="assessment-screen__subtext">Select all that apply.</p>
+              <div class="assessment-options assessment-options--multi" data-field="impact" role="group"
+                aria-labelledby="screen3-question">
+                <button class="option-btn" data-value="sleep" aria-pressed="false"> Sleep</button>
+                <button class="option-btn" data-value="work_study" aria-pressed="false"> Work or study</button>
+                <button class="option-btn" data-value="relationships" aria-pressed="false"> Relationships</button>
+                <button class="option-btn" data-value="appetite" aria-pressed="false"> Appetite</button>
+                <button class="option-btn" data-value="motivation" aria-pressed="false"> Motivation</button>
+                <button class="option-btn" data-value="concentration" aria-pressed="false"> Concentration</button>
+                <button class="option-btn" data-value="physical_health" aria-pressed="false"> Physical health</button>
+                <button class="option-btn" data-value="managing_okay" aria-pressed="false"> I'm managing okay</button>
+              </div>
+              <div class="assessment-nav">
+                <button class="btn btn--ghost" data-prev="2" aria-label="Go back to previous question">← Back</button>
+                <button class="btn btn--primary" data-next="4" aria-label="Continue to next question">Continue</button>
+              </div>
+            </div>
+
+            <!-- Screen 4 — Support History -->
+            <div class="assessment-screen" data-screen="4" role="group" aria-labelledby="screen4-question">
+              <p class="assessment-screen__question" id="screen4-question">Have you spoken to a professional about this
+                before?</p>
+              <p class="assessment-screen__subtext">Whatever your answer, you're in the right place.</p>
+              <div class="assessment-options assessment-options--single" data-field="history" role="group"
+                aria-labelledby="screen4-question">
+                <button class="option-btn" data-value="never" aria-pressed="false">Never — this is my first
+                  time</button>
+                <button class="option-btn" data-value="past" aria-pressed="false">Yes, in the past</button>
+                <button class="option-btn" data-value="current" aria-pressed="false">Currently seeing someone</button>
+                <button class="option-btn" data-value="tried_didnt_help" aria-pressed="false">I tried, but it didn't
+                  help</button>
+                <button class="option-btn" data-value="not_sure_where_start" aria-pressed="false">Not sure where to
+                  start</button>
+              </div>
+              <div class="assessment-nav">
+                <button class="btn btn--ghost" data-prev="3" aria-label="Go back to previous question">← Back</button>
+                <button class="btn btn--primary" data-next="5" aria-label="Continue to next question">Continue</button>
+              </div>
+            </div>
+
+            <!-- Screen 5 — What You're Looking For -->
+            <div class="assessment-screen" data-screen="5" role="group" aria-labelledby="screen5-question">
+              <p class="assessment-screen__question" id="screen5-question">What kind of support feels right for you
+                right now?</p>
+              <p class="assessment-screen__subtext">Select all that you're drawn to — there's no pressure.</p>
+              <div class="assessment-options assessment-options--multi" data-field="support_type" role="group"
+                aria-labelledby="screen5-question">
+                <button class="option-btn" data-value="talk" aria-pressed="false"> Someone to talk to</button>
+                <button class="option-btn" data-value="strategies" aria-pressed="false"> Practical strategies</button>
+                <button class="option-btn" data-value="medication" aria-pressed="false"> Medication guidance</button>
+                <button class="option-btn" data-value="crisis" aria-pressed="false"> Crisis support</button>
+                <button class="option-btn" data-value="dont_know" aria-pressed="false"> I don't know yet</button>
+                <button class="option-btn" data-value="understand" aria-pressed="false"> Just want to understand what
+                  I'm feeling</button>
+              </div>
+              <div class="assessment-nav">
+                <button class="btn btn--ghost" data-prev="4" aria-label="Go back to previous question">← Back</button>
+                <button class="btn btn--primary" data-next="6" aria-label="Continue to next question">Continue</button>
+              </div>
+            </div>
+
+            <!-- Screen 6 — Safe Space Check -->
+            <div class="assessment-screen" data-screen="6" role="group" aria-labelledby="screen6-question">
+              <p class="assessment-screen__question" id="screen6-question">Are you currently having thoughts of harming
+                yourself or others?</p>
+              <div class="assessment-screen__care-note" role="note">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-11v5m0-8v1"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+                <span>It's safe to answer honestly. This won't trigger any automatic actions. Your wellbeing is what
+                  matters.</span>
+              </div>
+              <div class="assessment-options assessment-options--single" data-field="safety" role="group"
+                aria-labelledby="screen6-question">
+                <button class="option-btn" data-value="no" aria-pressed="false">No, I'm not having those
+                  thoughts</button>
+                <button class="option-btn option-btn--sensitive" data-value="sometimes" aria-pressed="false">Sometimes /
+                  in the past</button>
+                <button class="option-btn option-btn--sensitive" data-value="yes_now" aria-pressed="false">Yes, right
+                  now</button>
+              </div>
+              <!-- Crisis Resources — shown inline when triggered -->
+              <div class="crisis-inline" id="crisis-inline" hidden role="alert" aria-live="assertive"
+                aria-atomic="true">
+                <div class="crisis-inline__header">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-11v5m0-8v1"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  </svg>
+                  <p id="crisis-inline-message">Thank you for telling us. Please reach out to one of these right now —
+                    support is available 24/7.</p>
+                </div>
+                <ul class="crisis-inline__list">
+                  <li><strong>988 Suicide &amp; Crisis Lifeline:</strong> Call or text <a href="tel:988">988</a></li>
+                  <li><strong>Crisis Text Line:</strong> Text HOME to <a href="sms:741741">741741</a></li>
+                  <li><strong>Emergency Services:</strong> Call <a href="tel:911">911</a>, <a href="tel:999">999</a>, or
+                    <a href="tel:112">112</a>
+                  </li>
+                  <li><strong>International:</strong> <a href="https://www.findahelpline.com" target="_blank"
+                      rel="noopener noreferrer">findahelpline.com</a></li>
+                </ul>
+              </div>
+              <div class="assessment-nav" id="screen6-nav">
+                <button class="btn btn--ghost" data-prev="5" aria-label="Go back to previous question">← Back</button>
+                <button class="btn btn--primary" id="submit-assessment" aria-label="Get my results">Get My
+                  Results</button>
+              </div>
+            </div>
+
+            <!-- RESULTS SCREEN -->
+            <div class="assessment-screen assessment-screen--results" data-screen="results" role="region"
+              aria-labelledby="results-headline" aria-live="polite">
+              <div class="results-loading" id="results-loading" aria-label="Generating your personalized summary"
+                role="status">
+                <div class="loading-spinner" aria-hidden="true"></div>
+                <p>Creating your personal snapshot…</p>
+              </div>
+              <div class="results-content" id="results-content" hidden>
+                <div class="results-badge" id="results-badge" aria-label="Results indicator"></div>
+                <h3 id="results-headline" class="results-headline">Your Personal Snapshot</h3>
+                <div class="results-summary" id="results-summary" aria-live="polite"></div>
+                <div class="results-label" id="results-label" aria-label="Informational pattern indicator"></div>
+                <div class="results-recommendation" id="results-recommendation"></div>
+                <p class="results-disclaimer" role="note">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-11v5m0-8v1"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  </svg>
+                  <strong>Important:</strong> This is not a medical diagnosis. These results are for reflection only and
+                  may not fully capture your experience. Please consult a qualified healthcare professional for clinical
+                  guidance.
+                </p>
+                <div class="results-ctas">
+                  <a href="find-pros.html" class="btn btn--primary" id="results-cta-match">Match Me With a Professional</a>
+                  <a href="find-mental-proffessionals.html/resources" class="btn btn--secondary" id="results-cta-resources">Explore Self-Help
+                    Resources</a>
+                </div>
+                <button class="btn btn--ghost retake-btn" id="retake-assessment">Retake Assessment</button>
+              </div>
+            </div>
+
+          </div><!-- /assessment-screens -->
+        </div><!-- /assessment-card -->
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       SITE FOOTER
+  ============================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container site-footer__inner">
+      <div class="site-footer__col">
+        <h4 class="site-footer__heading">Explore</h4>
+        <ul role="list">
+          <li><a href="https://vivirion.com">Home</a></li>
+          <li><a href="https://vivirion.com/vi-connect">Vi Connect</a></li>
+          <li><a href="https://vivirion.com/vi-learn">Vi Learn</a></li>
+          <li><a href="https://vivirion.com/vi-nav">Vi Nav</a></li>
+          <li><a href="mental-landing.html">Vi Well</a></li>
+          <li><a href="mental-snapshot.html">Vi Check</a></li>
+          <li><a href="find-pros.html">Vi Help</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/blog">Blog</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__col">
+        <h4 class="site-footer__heading">Legal</h4>
+        <ul role="list">
+          <li><a href="https://vivirion.com/privacy-policy">Privacy Policy</a></li>
+          <li><a href="https://vivirion.com/corporate-policy">Corporate Policy</a></li>
+          <li><a href="https://vivirion.com/terms-of-service">Terms of Use</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__col">
+        <h4 class="site-footer__heading">Need help?</h4>
+        <ul role="list" class="site-footer__contact">
+          <li>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+              <path d="M12 8v4l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+            <a href="/faq">F.A.Q.</a>
+          </li>
+          <li>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path
+                d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.09-1.09a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+            <a href="tel:4164246633">(416) 424-6633</a>
+          </li>
+          <li>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+              <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+            <a href="mailto:info@vivirion.com">info@vivirion.com</a>
+          </li>
+          <li>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="1.5" />
+              <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+            <span>12-9275 Markham Road, Suite 159<br />Markham, ON L6E 0H9<br />Canada</span>
+          </li>
+        </ul>
+      </div>
+      <div class="site-footer__col">
+        <h4 class="site-footer__heading">Connect with us</h4>
+        <div class="site-footer__social">
+          <a href="https://instagram.com/vivirion" aria-label="Vivirion on Instagram" target="_blank" rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.8" />
+              <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8" />
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+            </svg>
+          </a>
+          <a href="https://facebook.com/vivirion" aria-label="Vivirion on Facebook" target="_blank" rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" stroke="currentColor"
+                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+          <a href="https://linkedin.com/company/vivirion" aria-label="Vivirion on LinkedIn" target="_blank"
+            rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
+                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+              <circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="1.8" />
+            </svg>
+          </a>
+        </div>
+        <div class="site-footer__subscribe">
+          <p>Stay up to date for our latest offers and products:</p>
+          <form class="subscribe-form" aria-label="Email newsletter signup" onsubmit="return false;">
+            <input type="email" placeholder="Enter your email" class="subscribe-input"
+              aria-label="Email address for newsletter" />
+            <button type="submit" class="subscribe-btn">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="site-footer__bottom container">
+      <div class="site-footer__bottom-brand">
+        <svg width="30" height="30" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <ellipse cx="18" cy="22" rx="11" ry="13" fill="#2d9b6f" opacity="0.9" />
+          <ellipse cx="22" cy="14" rx="9" ry="11" fill="#4cbb8a" opacity="0.8" transform="rotate(20 22 14)" />
+          <line x1="18" y1="34" x2="18" y2="10" stroke="#1a6645" stroke-width="1.5" stroke-linecap="round" />
+        </svg>
+        <div>
+          <p class="site-footer__brand-name">Vivirion Solutions Inc.</p>
+          <p class="site-footer__brand-tag">Transforming Care. Inspiring Change.</p>
+        </div>
+      </div>
+      <p class="site-footer__copy">© 2026. All rights reserved. <span>Vi Well - Connect is a subsidiary of Vivirion
+          Solutions Inc.</span></p>
+    </div>
+    <p class="site-footer__disclaimer container" role="note">Vi Well provides general informational guidance only and is
+      not a substitute for professional medical advice, diagnosis, or treatment. Vivirion Solutions is not responsible
+      for the accuracy of AI-generated content or third-party resources. By using this tool you agree to our <a
+        href="/terms">Terms of Use</a>, <a href="/privacy">Privacy Policy</a>, and <a href="/corporate-policy">Corporate
+        Policy</a>.</p>
+  </footer>
+
+  <script src="mental-health.js"></script>
+</body>
+
+</html>
